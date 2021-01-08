@@ -11,9 +11,14 @@ public class VolumeFlow extends Flow {
         setValue(value);
     }
 
-    public VolumeFlow(MassFlow massFlow, Volume volume){
+    /**
+     * @param massFlow a mass flow in kg/s
+     * @param volume a specific volume
+     * @throws IllegalArgumentException if volume is not specific
+     */
+    public VolumeFlow(MassFlow massFlow, Volume volume) throws IllegalArgumentException {
         if (!volume.isSpecific()) throw new IllegalArgumentException(volume + " is not specific");
-        setValue(massFlow.getValue() * volume.getValue());
+        setValue(massFlow.getValue() * volume.getInCubicMetre().getValue());
     }
 
     @Override
