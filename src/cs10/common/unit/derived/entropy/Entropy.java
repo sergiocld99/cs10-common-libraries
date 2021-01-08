@@ -7,7 +7,7 @@ import cs10.common.unit.derived.energy.Heat;
 
 /**
  * @author Calderon Sergio Leandro
- * @version 2
+ * @version 3
  */
 public class Entropy extends SpecificUnit {
 
@@ -26,6 +26,10 @@ public class Entropy extends SpecificUnit {
      */
     public Entropy(Heat heat, Kelvin kelvin){
         this(heat.getValue() / kelvin.getValue(), true);
+    }
+
+    public Entropy(Heat heat, Temperature temperature){
+        this(heat, temperature.getInKelvin());
     }
 
     @Override
