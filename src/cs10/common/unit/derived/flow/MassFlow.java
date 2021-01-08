@@ -4,6 +4,10 @@ import cs10.common.unit.Unit;
 import cs10.common.unit.derived.energy.Enthalpy;
 import cs10.common.unit.derived.power.Power;
 
+/**
+ * @author Calderon Sergio Leandro
+ * @version 2
+ */
 public class MassFlow extends Unit {
 
     public MassFlow(){}
@@ -14,6 +18,10 @@ public class MassFlow extends Unit {
 
     public MassFlow(Power power, Enthalpy work){
         this(power.getInKiloWatt().getValue() / work.getValue());
+    }
+
+    public MassFlow(double fraction, MassFlow total){
+        this(fraction * total.getValue());
     }
 
     @Override
