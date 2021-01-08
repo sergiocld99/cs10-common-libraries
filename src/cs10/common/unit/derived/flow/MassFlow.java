@@ -8,7 +8,7 @@ import cs10.common.unit.derived.power.Power;
  * @author Calderon Sergio Leandro
  * @version 2
  */
-public class MassFlow extends Unit {
+public class MassFlow extends Flow {
 
     public MassFlow(){}
 
@@ -25,17 +25,12 @@ public class MassFlow extends Unit {
     }
 
     @Override
-    public String getAbbreviation() {
-        return "kg/s";
+    protected String getInternalAbbreviation() {
+        return "kg";
     }
 
     @Override
     public char getIdentifier() {
         return 'M';
-    }
-
-    @Override
-    public String toString() {
-        return getIdentifier() + " = " + getValue() + " " + getAbbreviation();
     }
 }
