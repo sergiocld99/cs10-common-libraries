@@ -20,6 +20,11 @@ public class Rankine extends AbsoluteTemperature {
     }
 
     @Override
+    public Kelvin getInKelvin() {
+        return new Kelvin(new Celsius(this));
+    }
+
+    @Override
     public Celsius getInCelsius() {
         return new Celsius(this);
     }

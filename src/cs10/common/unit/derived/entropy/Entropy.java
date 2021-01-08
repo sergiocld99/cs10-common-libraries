@@ -22,10 +22,10 @@ public class Entropy extends SpecificUnit {
 
     /**
      * @param heat heat from hot source (negative) or to cold sink (positive)
-     * @param temperature temperature of hot source or cold sink
+     * @param kelvin temperature of hot source or cold sink
      */
-    public Entropy(Heat heat, Temperature temperature){
-        this(heat.getValue() / temperature.getInCelsius().getValue(), true);
+    public Entropy(Heat heat, Kelvin kelvin){
+        this(heat.getValue() / kelvin.getValue(), true);
     }
 
     @Override

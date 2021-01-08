@@ -32,6 +32,11 @@ public class Celsius extends RelativeTemperature {
     }
 
     @Override
+    public Kelvin getInKelvin() {
+        return new Kelvin(this);
+    }
+
+    @Override
     protected char getLetter() {
         return 'C';
     }

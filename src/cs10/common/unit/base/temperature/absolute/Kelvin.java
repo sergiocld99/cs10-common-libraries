@@ -22,6 +22,11 @@ public class Kelvin extends AbsoluteTemperature {
     }
 
     @Override
+    public Kelvin getInKelvin() {
+        return this;
+    }
+
+    @Override
     public String getAbbreviation() {
         return ABBREV;
     }

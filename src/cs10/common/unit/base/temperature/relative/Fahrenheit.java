@@ -1,6 +1,7 @@
 package cs10.common.unit.base.temperature.relative;
 
 import cs10.common.unit.Conversion;
+import cs10.common.unit.base.temperature.absolute.Kelvin;
 
 public class Fahrenheit extends RelativeTemperature {
 
@@ -18,6 +19,11 @@ public class Fahrenheit extends RelativeTemperature {
     @Override
     public Celsius getInCelsius() {
         return new Celsius(this);
+    }
+
+    @Override
+    public Kelvin getInKelvin() {
+        return new Kelvin(new Celsius(this));
     }
 
     @Override
